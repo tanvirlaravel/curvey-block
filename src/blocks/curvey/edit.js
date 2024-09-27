@@ -31,7 +31,8 @@ import metadata from "./block.json";
  *
  * @return {Element} Element to render.
  */
-export default function Edit() {
+export default function Edit({ attributes, setAttributes }) {
+	const { enableTopCurve } = attributes;
 	return (
 		<>
 			<p {...useBlockProps()}>
@@ -44,7 +45,12 @@ export default function Edit() {
 					initialOpen={true}
 				>
 					<div style={{ display: "flex" }}>
-						<ToggleControl />
+						<ToggleControl
+							onChange={(isChecked) =>
+								setAttributes({ enableTopCurve: isChecked })
+							}
+							checked={enableTopCurve}
+						/>
 						<span>{__("Enable top curve", metadata.textdomain)}</span>
 					</div>
 				</PanelBody>
