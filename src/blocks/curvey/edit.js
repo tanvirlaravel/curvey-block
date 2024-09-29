@@ -22,6 +22,7 @@ import { PanelBody, ToggleControl } from "@wordpress/components";
  */
 import "./editor.scss";
 import metadata from "./block.json";
+import Curve from "./components/curve";
 
 /**
  * The edit function describes the structure of your block in the context of the
@@ -33,11 +34,16 @@ import metadata from "./block.json";
  */
 export default function Edit({ attributes, setAttributes }) {
 	const { enableTopCurve } = attributes;
+	const {className, ...blockProps } = useBlockProps();
+
 	return (
 		<>
-			<p {...useBlockProps()}>
-				{__("Curvey – hello from the editor!", metadata.textdomain)}
-			</p>
+
+			<section className={`${className} alignfull`}>
+				{enableTopCurve && <Curve /> }
+
+			</section>
+
 
 			<InspectorControls>
 				<PanelBody
