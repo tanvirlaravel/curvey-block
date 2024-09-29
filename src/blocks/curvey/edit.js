@@ -36,6 +36,8 @@ export default function Edit({ attributes, setAttributes }) {
 	const { enableTopCurve } = attributes;
 	const {className, ...blockProps } = useBlockProps();
 
+	console.log(className)
+
 	return (
 		<>
 

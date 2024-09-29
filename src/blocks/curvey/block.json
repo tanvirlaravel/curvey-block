@@ -9,10 +9,15 @@
 	"description": "Curvy shaped dividers to make dividing page content more interesting.",
 	"example": {},
 	"supports": {
-		"html": false
+		"html": false,
+		"color": {
+			"background": true,
+			"link": false,
+			"text": false
+		}
 	},
 	"attributes": {
-		"enableTopCurve" :{
+		"enableTopCurve": {
 			"type": "boolean",
 			"default": true
 		}
